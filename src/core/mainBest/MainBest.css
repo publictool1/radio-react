@@ -1,0 +1,50 @@
+.bests-container {
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.best {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.best-single {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.best-single:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.best-single .best-img {
+    flex: 0 0 120px;
+}
+
+.best-single img {
+    width: 100%;
+    height: auto;
+}
+
+.best-single .best-info {
+    flex: 1;
+    padding: 10px;
+}
+
+.best-single h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.best-single p {
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.best-single p:last-child {
+    margin-bottom: 0;
+}

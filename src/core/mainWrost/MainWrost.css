@@ -1,0 +1,33 @@
+.wrost-container {
+    padding: 20px;
+  }
+  
+  .wrost {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .wrost-single {
+    width: 25%;
+    padding: 10px;
+  }
+  
+  .wrost-img img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .wrost-info {
+    margin-top: 10px;
+  }
+  
+  .wrost-info h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .wrost-info p {
+    font-size: 14px;
+    margin: 0;
+  }
+  

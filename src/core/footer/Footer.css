@@ -1,0 +1,56 @@
+.footer {
+    margin: 0px auto;
+    padding: 40px 0px 0px 0px;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-content {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.footer-image {
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+.footer-image img {
+    width: 350px; /* Ширина изображения */
+    border-radius: 50%; /* Закругление углов */
+}
+
+.footer-info {
+    margin-bottom: 20px; /* Отступ снизу */
+    /* Дополнительные стили для информации в футере */
+}
+
+.footer-info p {
+    color: #555; /* Цвет текста */
+    font-size: 18px; /* Размер шрифта */
+    margin-bottom: 40px;
+}
+
+.download-button {
+    padding: 15px 30px;
+    background-color: #0088b5;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    /* font-size: 18px; */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.footer-info a {
+    text-decoration: none;
+}
+
+.download-button:hover {
+    background-color: #005671;
+}
