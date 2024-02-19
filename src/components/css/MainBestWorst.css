@@ -130,3 +130,10 @@
 .worst-img:hover .play-button {
     opacity: 1;
 }
+
+@media only screen and (max-width: 600px) {
+    .best, .worst {
+        width: calc(50% - 10px); /* Разделение на две колонки с небольшим зазором */
+        padding: 10px;
+    }
+}

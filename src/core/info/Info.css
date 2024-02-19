@@ -45,3 +45,14 @@
     font-size: 14px;
     color: #666;
 }
+
+@media only screen and (max-width: 600px) {
+    .last-item {
+        width: 170px;
+        margin-bottom: 30px;
+    }
+
+    .lasts-container h2 {
+        font-size: 25px;
+    }
+}
