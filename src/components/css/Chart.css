@@ -1,6 +1,7 @@
 .all-container {
   margin: 100px 0px;
-  background-color: lavenderblush;
+  background-color: #015da8; /* Исходный фоновый градиент */
+  animation: background-animation 5s infinite alternate; /* Анимация переливания */
 }
 
 .all-content {
@@ -10,7 +11,7 @@
   justify-content: space-between;
 }
 
-.best, .worst {
+.bestz, .worst {
   margin-bottom: 50px;
 }
 
@@ -19,12 +20,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid #ddd;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
   background-color: white;
+  margin-bottom: 20px;
 }
 
 .best-single:hover, .worst-single:hover {
@@ -66,12 +67,13 @@
 
 .all-content h1 {
   margin: 40px 0px;
+  color: white;
 }
 
 .all-content a {
   display: inline-block;
   padding: 10px 20px;
-  background-color: bisque; /* Цвет фона */
+  background-color: #007bff; /* Цвет фона */
   color: #333; /* Цвет текста */
   text-decoration: none; /* Убираем подчеркивание */
   border-radius: 5px; /* Закругляем углы */
@@ -79,5 +81,19 @@
 }
 
 .all-content a:hover {
-  background-color: #d2b48c; /* Цвет фона при наведении */
+  background-color: #0056b3; /* Цвет фона при наведении */
+}
+
+@media only screen and (max-width: 600px) { 
+  .best-single, .worst-single {
+    height: 350px;
+  }
+
+  .bestz, .worst {
+    width: 48%;
+}
+
+.all-content {
+  padding: 10px;
+}
 }

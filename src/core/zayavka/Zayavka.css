@@ -2,7 +2,7 @@
     display: flex;
     width: 85%;
     margin: 20px auto;
-    background: bisque;
+    background: #015da8;
     border-radius: 11px;
     padding: 20px;
     justify-content: space-around;
@@ -15,21 +15,20 @@
     margin: 0;
     font-size: 62px;
     /* Размер шрифта "Играет сейчас" */
-    color: #333;
+    color: white;
 }
 
 .song-text p {
     margin: 5px 0;
     font-size: 26px;
     /* Размер шрифта "Не забудьте оценить песню!" */
-    color: #666;
+    color: white;
 }
-
 .song-request-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: bisque;
+    background-color: #015da8;
     /* Цвет фона */
     padding: 20px;
 }

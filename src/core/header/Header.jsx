@@ -9,6 +9,9 @@ function Header() {
                 <div className="logo">
                     <Link><h1>Христианская песня</h1></Link>
                 </div>
+                <div className="logo">
+                    <img src="/images/logo.png" alt="logo" />
+                </div>
                 <div className="links">
                     <Link to='/'>Главная</Link>
                     <Link to='/chart'>Чарт</Link>

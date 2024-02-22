@@ -11,15 +11,20 @@
   padding: 20px;
 }
 
+.player-content {
+  width: 100%;
+}
+
 .player-container {
   display: flex;
   width: 85%;
   margin: 20px auto;
-  background: bisque;
+  background: #015da8;
   border-radius: 11px;
   padding: 20px;
   justify-content: space-around;
   align-items: center;
+  height: 400px;
 }
 
 .player-text {
@@ -28,7 +33,7 @@
 
 .player-text h1 {
   margin: 0;
-  font-size: 62px; /* Размер шрифта "Играет сейчас" */
+  font-size: 62px;
   color: #333;
 }
 
@@ -42,13 +47,11 @@
   display: flex;
   align-items: center;
   gap: 15px;
-  flex-direction: column;
+  justify-content: space-around;
 }
 
 .current-track img {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
+  width: 275px;
   border-radius: 10px;
   transition: all 0.5s ease-in-out;
 }
@@ -70,21 +73,69 @@
 
 .track-info h2 {
   margin: 0;
-  font-size: 16px; /* Размер шрифта названия трека */
-  color: #333;
+  font-size: 36px; /* Размер шрифта названия трека */
+  color: white;
 }
 
 .track-info p {
   margin: 0;
-  font-size: 14px; /* Размер шрифта исполнителя */
-  color: #666;
+  font-size: 22px; /* Размер шрифта исполнителя */
+  color: white;
 }
 
 .controls {
   display: flex;
-    width: 87%;
-    align-items: center;
-    justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.controls .play-pause {
+  font-size: 50px;
+  cursor: pointer;
+}
+
+.controls .icon-dis_like {
+  display: flex;  
+  gap: 20px;
+  cursor: pointer;
+  font-size: 23px;
+  justify-content: space-around;
+}
+
+.icon-dis_like .fa-icon {
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.efir {
+  background: white;
+    width: 100%;
+    border-radius: 20px;
+    text-align: center;
+    padding: 5px;
+}
+
+.play-pause {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.loading-message {
+  text-align: center;
+  color: white;
+  font-size: 39px;
+}
+
+.vo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 50px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -127,6 +178,15 @@
 
   .track-info p {
     font-size: 12px; /* Уменьшенный размер шрифта для мобильных устройств */
+  }
+
+  .efir {
+    font-size: 16px;
+  }
+
+  .play-pause {
+    font-size: 25px !important;
+    padding: 5px 10px;
   }
 }
 

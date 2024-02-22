@@ -43,7 +43,7 @@ function Chart() {
     return (
         <div className='all-container'>
             <div className="all-content">
-                <div className="best">
+                <div className="bestz">
                     <h1 className="section-title">Лучшие песни</h1>
                     {bestTracks.map((track, index) => (
                         <div className="best-single" key={index}>

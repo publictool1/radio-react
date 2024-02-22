@@ -14,6 +14,16 @@
     font-size: 36px;
 }
 
+.logo {
+    width: 200px;
+    height: auto !important;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+}
+
 .header-container a {
     text-decoration: none;
     color: black;
@@ -45,11 +55,15 @@
 @media only screen and (max-width: 600px) {
     .header-container {
         padding: 20px 30px;
-        flex-direction: column; /* Измените отступы для мобильных устройств по вашему усмотрению */
+        flex-wrap: wrap; /* Измените отступы для мобильных устройств по вашему усмотрению */
     }
 
     .header-container h1 {
         font-size: 24px; /* Измените размер заголовка для мобильных устройств по вашему усмотрению */
+    }
+
+    .logo {
+        width: 100px;
     }
 
     .links a {
