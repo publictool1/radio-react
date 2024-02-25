@@ -61,7 +61,7 @@
   border-radius: 10px;
 }
 
-.track-info {
+.track-info-p {
   text-align: left;
   width: 100%;
   gap: 10px;
@@ -71,22 +71,23 @@
   margin-bottom: 15px;
 }
 
-.track-info h2 {
+.track-info-p h2 {
   margin: 0;
   font-size: 36px; /* Размер шрифта названия трека */
   color: white;
 }
 
-.track-info p {
+.track-info-p p {
   margin: 0;
-  font-size: 22px; /* Размер шрифта исполнителя */
+  font-size: 16px; /* Размер шрифта исполнителя */
   color: white;
 }
 
 .controls {
   display: flex;
-  align-items: flex-start;
   flex-direction: column;
+  width: 450px;
+  align-items: stretch;
 }
 
 .controls .play-pause {
@@ -95,11 +96,12 @@
 }
 
 .controls .icon-dis_like {
-  display: flex;  
-  gap: 20px;
+  display: flex;
+  /* gap: 20px; */
   cursor: pointer;
   font-size: 23px;
-  justify-content: space-around;
+  padding: 0px 10px;
+  justify-content: space-between;
 }
 
 .icon-dis_like .fa-icon {
@@ -119,9 +121,13 @@
   background-color: white;
   color: black;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 14px;
+  display: flex;
   border-radius: 50%;
   cursor: pointer;
+  transition: color 0.3s ease;
+  align-items: center;
+  justify-content: center;
 }
 
 .loading-message {
@@ -172,11 +178,11 @@
     max-width: 150px; /* Уменьшенный размер изображения для мобильных устройств */
   }
 
-  .track-info h2 {
+  .track-info-p h2 {
     font-size: 14px; /* Уменьшенный размер шрифта для мобильных устройств */
   }
 
-  .track-info p {
+  .track-info-p p {
     font-size: 12px; /* Уменьшенный размер шрифта для мобильных устройств */
   }
 
@@ -188,5 +194,22 @@
     font-size: 25px !important;
     padding: 5px 10px;
   }
+
+  .controls {
+    width: 415px;
+    align-items: center;
+}
+
+.current-track {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: space-around;
+  flex-direction: column-reverse;
+}
+
+.vo {
+  width: 50%;
+}
 }
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './css/MainBestWorst.css';
 
-function MainBestWorst(props) {
+const MainBestWorst = () => {
     const [bestTracks, setBestTracks] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isAtStart, setIsAtStart] = useState(true);
@@ -15,12 +15,12 @@ function MainBestWorst(props) {
             try {
                 const response = await axios.get('https://pu.xpradio.ru:1030/api/v2/track_stats/best/?server=1');
                 if (response.status === 200 && response.data.length > 0) {
-                    setBestTracks(response.data.slice(0, 10));
+                    setBestTracks(response.data.slice(0, 12));
                 }
             } catch (err) {
                 console.error(err);
             }
-        }
+        };
         fetchBestTracks();
     }, []);
 
@@ -39,11 +39,9 @@ function MainBestWorst(props) {
             }
         };
 
-        // Вызываем функцию обработки изменения размера окна при монтировании и обновлении компонента
         window.addEventListener('resize', handleResize);
-        handleResize(); // Вызываем её ещё раз при монтировании, чтобы установить правильное значение
+        handleResize();
 
-        // Очищаем слушателя события при размонтировании компонента
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
@@ -56,29 +54,30 @@ function MainBestWorst(props) {
     };
 
     return (
-        <div className='twise'>
-            <button className="scroll-button" onClick={scrollLeft} disabled={isAtStart}>←</button>
-            <div className="best">
+        <div className='main-best-worst'>
+            <button className="scroll-button scroll-button-left" onClick={scrollLeft} disabled={isAtStart}>←</button>
+            <div className="best-tracks">
                 <h1 className="section-title">Лучшие песни</h1>
-                <p className='ps'>песни с наивысшим рейтингом</p>
-                <div className="page" style={{ transform: `translateX(-${currentIndex * transformValue}%)` }}>
+                <p className='sub-title'>песни с наивысшим рейтингом</p>
+                <div className="track-list" style={{ transform: `translateX(-${currentIndex * transformValue}%)` }}>
                     {bestTracks.map((track, index) => (
-                        <div className="best-single_main" key={index}>
-                            <div className="best-img">
-                            <img src={track.image_medium ? `https://pu.xpradio.ru:1030${track.image_medium}` : defaultImage} alt="Обложка" />
+                        <div className="track" key={index}>
+                            <div className="track-image">
+                                <img src={track.image_medium ? `https://pu.xpradio.ru:1030${track.image_medium}` : defaultImage} alt="Обложка" />
                             </div>
-                            <div className="best-info">
+                            <div className="track-info">
                                 <h2>{track.title}</h2>
-                                <p>{track.author}</p>
-                                <p>{track.album}</p>
+                                <p>Исполнитель: {track.author}</p>
+                                <p>Альбом: {track.album}</p>
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
-            <button className="scroll-button" onClick={scrollRight} disabled={isAtEnd}>→</button>
+            <button className="scroll-button scroll-button-right" onClick={scrollRight} disabled={isAtEnd}>→</button>
         </div>
+
     );
-}
+};
 
 export default MainBestWorst;

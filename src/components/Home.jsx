@@ -3,14 +3,17 @@ import Player from '../core/player/Player';
 import Info from '../core/info/Info';
 import Zayavka from '../core/zayavka/Zayavka';
 import MainBestWorst from './MainBestWorst';
+import { PlayerProvider } from '../core/player/PlayerContext';
 
 function Home() {
     return (
         <div>
-            <Player />
-            <Info />
-            <MainBestWorst />
-            <Zayavka />
+            <PlayerProvider>
+                {/* <Player /> */}
+                <Info />
+                <MainBestWorst />
+                <Zayavka />
+            </PlayerProvider>
         </div>
     );
 }

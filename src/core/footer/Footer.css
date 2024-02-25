@@ -62,5 +62,9 @@
     .footer {
         padding: 0px 0px 50px 0px;
     }
+
+    .dama {
+        padding: 10px !important;
+    }
   }
   

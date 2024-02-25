@@ -6,9 +6,9 @@ function Header() {
     return (
         <div className='header'>
             <div className="header-container">
-                <div className="logo">
+                {/* <div className="logo">
                     <Link><h1>Христианская песня</h1></Link>
-                </div>
+                </div> */}
                 <div className="logo">
                     <img src="/images/logo.png" alt="logo" />
                 </div>
