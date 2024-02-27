@@ -1,6 +1,6 @@
 .footer {
-    margin: 0px auto;
-    padding: 40px 0px 0px 0px;
+    margin: 0 auto;
+    padding: 40px 0;
     max-width: 1200px;
     display: flex;
     align-items: center;
@@ -9,30 +9,27 @@
 
 .footer-content {
     display: flex;
-    /* flex-direction: column; */
     align-items: center;
     text-align: center;
     justify-content: space-between;
 }
 
 .footer-image {
-    margin-bottom: 20px; /* Отступ снизу */
+    margin-bottom: 20px;
 }
 
 .footer-image img {
-    width: 350px; /* Ширина изображения */
-    border-radius: 50%; /* Закругление углов */
+    width: 300px;
 }
 
 .footer-info {
-    margin-bottom: 20px; /* Отступ снизу */
-    /* Дополнительные стили для информации в футере */
+    margin-bottom: 30px;
 }
 
-.footer-info p {
-    color: #555; /* Цвет текста */
-    font-size: 18px; /* Размер шрифта */
-    margin-bottom: 40px;
+.download-info {
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 .download-button {
@@ -41,30 +38,34 @@
     color: #fff;
     border: none;
     border-radius: 5px;
-    /* font-size: 18px; */
     cursor: pointer;
     transition: background-color 0.3s ease;
     text-transform: uppercase;
-}
-
-.footer-info a {
-    text-decoration: none;
+    text-decoration: none; /* Убираем подчеркивание */
 }
 
 .download-button:hover {
     background-color: #005671;
 }
 
+.down {
+    margin-bottom: 30px;
+}
+
 @media only screen and (max-width: 600px) {
     .footer-content {
-      flex-direction: column;
-    }
-    .footer {
-        padding: 0px 0px 50px 0px;
+        flex-direction: column;
     }
 
-    .dama {
-        padding: 10px !important;
+    .footer {
+        padding: 0 0 50px;
     }
-  }
-  
+
+    .download-info {
+        margin-bottom: 5px;
+    }
+
+    .download-button {
+        margin-top: 10px;
+    }
+}

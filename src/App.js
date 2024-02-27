@@ -5,7 +5,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './core/header/Header';
 import Footer from './core/footer/Footer';
 import { PlayerProvider } from './core/player/PlayerContext'; // Импортируем PlayerProvider
-import Player from './core/player/Player'; // Импортируем компонент Player
+import Player from './core/player/Player';
+import './App.css' // Импортируем компонент Player
 
 function App() {
   const Home = lazy(() => import('./components/Home'));
@@ -32,7 +33,7 @@ function App() {
         <PlayerProvider>
           <Player /> {/* Плеер здесь, но вы можете решить, когда его отображать */}
         </PlayerProvider>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './Info.css'
+// import './Info.css'
+import '../concl.css'
 
 function Info(props) {
     const [currentTracks, setCurrentTracks] = useState([]);
@@ -21,14 +22,14 @@ function Info(props) {
 
         const interval = setInterval(() => {
             fetchCurrentTracks();
-        }, 10000); // Периодический опрос сервера каждые 10 секунд (время в миллисекундах)
+        }, 10000);
 
-        return () => clearInterval(interval); // Очистить интервал при размонтировании компонента
+        return () => clearInterval(interval);
     }, []);
 
     return (
         <div className='lasts-container'>
-            <h2>Последние четыре песни</h2>
+            <h1 className="section-title_four">Последние четыре песни</h1>
             <div className="lasts">
                 {currentTracks.map((track, index) => (
                     <div className="last-item" key={index}>
@@ -37,7 +38,8 @@ function Info(props) {
                         </div>
                         <div className="last-info">
                             <h3>{track.title}</h3>
-                            <p>{track.author}</p>
+                            <p>Автор: {track.author}</p>
+                            {/* <p>{track.album}</p> */}
                         </div>
                     </div>
                 ))}

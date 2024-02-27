@@ -88,7 +88,7 @@ export const PlayerProvider = ({ children }) => {
                 isLoading,
                 audioRef,
                 defaultImage,
-                streamUrl, // Передаем URL потока
+                streamUrl,
                 handlePlayPause,
                 handleLike,
                 handleDislike,

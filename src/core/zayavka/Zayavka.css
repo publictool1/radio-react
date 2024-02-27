@@ -8,7 +8,6 @@
     justify-content: space-around;
     align-items: center;
     height: 440px;
-    margin: 150px auto;
 }
 
 .song-text h2 {
@@ -80,6 +79,10 @@
     background-color: #005671;
 }
 
+.song-text {
+    width: 530px;
+}
+
 @media only screen and (max-width: 600px) {
     .song-container {
         flex-direction: column;
@@ -109,5 +112,9 @@
         color: #555;
         font-size: 16px;
         margin-bottom: 40px;
+    }
+
+    .song-text  {
+        width: 100%;
     }
 }

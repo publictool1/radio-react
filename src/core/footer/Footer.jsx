@@ -9,7 +9,9 @@ function Footer() {
                     <img src="/images/course2.png" alt="cover" />
                 </div>
                 <div className="footer-info">
-                    <p className='dama'>Скачайте наше мобильное приложение для удобного доступа к музыкальному контенту, возможностям заказа песен, оценки треков и другим функциям. Будьте в курсе последних новинок и получайте уведомления о новых релизах и акциях.</p>
+                    <p className='download-info'>Для удобства, скачайте наше мобильное приложение</p>
+                    <p className='download-info'>для доступа к музыкальному контенту, заказа песен,</p>
+                    <p className='download-info down'>оценки треков и другим функциям.</p>
                     <a href="https://xpradio.ru/wp-content/uploads/2024/02/app-release.apk" download className="download-button">Скачать приложение</a>
                 </div>
             </div>
