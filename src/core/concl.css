@@ -230,6 +230,13 @@
   max-width: 170px;
 }
 
+.last-info h3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 170px;
+}
+
 .main-best-worst {
   border-left: none;
   border-top: 3px solid #015da8;
