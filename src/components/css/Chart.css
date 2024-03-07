@@ -1,99 +1,138 @@
 .all-container {
-  margin: 100px 0px;
-  background-color: #015da8; /* Исходный фоновый градиент */
-  animation: background-animation 5s infinite alternate; /* Анимация переливания */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .all-content {
-  display: flex;
+  width: 80%;
   max-width: 1200px;
-  margin: 20px auto;
-  justify-content: space-between;
-}
-
-.bestz, .worst {
-  margin-bottom: 50px;
-}
-
-.best-single, .worst-single {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 20px;
+  /* border: 2px solid #ccc; */
   border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
-  background-color: white;
+  background-color: #015da8;
+}
+
+.chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 20px;
 }
 
-.best-single:hover, .worst-single:hover {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+.section-title {
+  font-size: 24px;
+  margin: 0;
 }
 
-.best-img, .worst-img {
-  width: 100%;
-  height: 200px;
+.chart-buttons button {
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 5px;
+  outline: none;
+}
+
+.chart-buttons button.active {
+  background-color: #ccc;
+}
+
+.chart-tracks {
+  max-height: 600px;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0px 10px;
+}
+
+.chart-single {
+  width: calc(50% - 10px);
+  margin-bottom: 30px;
+  display: flex;
+  /* border: 1px solid #ddd; */
+  border-radius: 10px;
+  background-color: white;
   overflow: hidden;
+  justify-content: flex-start;
 }
 
-.best-img img, .worst-img img {
-  width: 100%;
+.chart-img img {
+  width: 100px;
   height: 100%;
   object-fit: cover;
+  border-radius: 10px 0 0 10px;
 }
 
-.best-info, .worst-info {
-  padding: 15px;
-  text-align: center;
-}
-
-.best-info h2, .worst-info h2 {
-  margin: 0;
-  font-size: 18px;
-  color: #333;
-}
-
-.best-info p, .worst-info p {
-  margin: 5px 0;
-  font-size: 14px;
-  color: #666;
-}
-
-.all-content {
-  text-align: center;
-}
-
-.all-content h1 {
-  margin: 40px 0px;
-  color: white;
-}
-
-.all-content a {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #007bff; /* Цвет фона */
-  color: #333; /* Цвет текста */
-  text-decoration: none; /* Убираем подчеркивание */
-  border-radius: 5px; /* Закругляем углы */
-  transition: background-color 0.3s; /* Плавное изменение цвета при наведении */
-}
-
-.all-content a:hover {
-  background-color: #0056b3; /* Цвет фона при наведении */
-}
-
-@media only screen and (max-width: 600px) { 
-  .best-single, .worst-single {
-    height: 350px;
-  }
-
-  .bestz, .worst {
-    width: 48%;
-}
-
-.all-content {
+.chart-info {
   padding: 10px;
 }
+
+.chart-info h2 {
+  font-size: 18px;
+  margin: 0 0 5px;
+}
+
+.chart-info p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.track-block {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  align-items: flex-start;
+}
+
+.chart-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+/* Стили для скроллбара */
+.chart-tracks::-webkit-scrollbar {
+  width: 10px; /* Ширина скроллбара */
+}
+
+.chart-tracks::-webkit-scrollbar-track {
+  background: #ccc; /* Цвет фона */
+  border-radius: 8px;
+}
+
+.chart-tracks::-webkit-scrollbar-thumb {
+  background-color: #888; /* Цвет скроллбара */
+  border-radius: 5px; /* Радиус скроллбара */
+}
+
+@media only screen and (max-width: 600px) {
+  .all-content {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .chart-header {
+    padding: 0px 15px;
+  }
+
+  .chart-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .chart-buttons button {
+    width: 100%;
+  }
+  
+  .chart-single {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .chart-info {
+    padding: 10px;
+  }
 }
