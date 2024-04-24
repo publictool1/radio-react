@@ -28,7 +28,7 @@ export const PlayerProvider = ({ children }) => {
             if (response.status === 200 && response.data.results.length > 0) {
                 const track = response.data.results[0];
                 setCurrentTrack(track);
-                setStreamUrl(track.stream_url); // Обновляем URL потока
+                setStreamUrl(track.stream_url); 
                 setIsLoading(false);
             }
         } catch (error) {
@@ -44,30 +44,6 @@ export const PlayerProvider = ({ children }) => {
                 audioRef.current.pause();
             } else {
                 audioRef.current.play();
-            }
-        }
-    };
-
-    const handleLike = async () => {
-        if (!liked) {
-            setLiked(true);
-            setDisliked(false);
-            try {
-                await axios.post(`https://pu.xpradio.ru:1030/api/v2/music/${currentTrack.id}/like/`);
-            } catch (error) {
-                console.error('Ошибка при отправке запроса на лайк:', error);
-            }
-        }
-    };
-
-    const handleDislike = async () => {
-        if (!disliked) {
-            setDisliked(true);
-            setLiked(false);
-            try {
-                await axios.post(`https://pu.xpradio.ru:1030/api/v2/music/${currentTrack.id}/dislike/`);
-            } catch (error) {
-                console.error('Ошибка при отправке запроса на дизлайк:', error);
             }
         }
     };
@@ -90,8 +66,6 @@ export const PlayerProvider = ({ children }) => {
                 defaultImage,
                 streamUrl,
                 handlePlayPause,
-                handleLike,
-                handleDislike,
                 handleVolumeChange,
             }}
         >
