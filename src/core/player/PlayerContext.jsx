@@ -5,14 +5,13 @@ const PlayerContext = createContext();
 
 export const PlayerProvider = ({ children }) => {
     const [currentTrack, setCurrentTrack] = useState(null);
-    const [liked, setLiked] = useState(false);
-    const [disliked, setDisliked] = useState(false);
     const [isPlaying, setIsPlaying] = useState(false);
     const [volume, setVolume] = useState(50);
     const [isLoading, setIsLoading] = useState(true);
-    const [streamUrl, setStreamUrl] = useState(''); // Добавляем состояние для URL потока
+    const [streamUrl, setStreamUrl] = useState('');
     const audioRef = useRef(null);
     const defaultImage = 'https://xpradio.ru/wp-content/uploads/2024/01/cropped-ЛОГО_Радио_Христианская_Песня.png';
+    const [recentSongs, setRecentSongs] = useState([]);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -30,6 +29,7 @@ export const PlayerProvider = ({ children }) => {
                 setCurrentTrack(track);
                 setStreamUrl(track.stream_url); 
                 setIsLoading(false);
+                updateRecentSongs(track);
             }
         } catch (error) {
             console.error('Ошибка загрузки данных о текущем треке:', error);
@@ -48,6 +48,11 @@ export const PlayerProvider = ({ children }) => {
         }
     };
 
+        const updateRecentSongs = (track) => {
+        setRecentSongs(prevSongs => [track, ...prevSongs.slice(0, 3)]);
+    };
+
+
     const handleVolumeChange = (e) => {
         setVolume(parseFloat(e.target.value));
         audioRef.current.volume = parseFloat(e.target.value) / 100;
@@ -57,8 +62,6 @@ export const PlayerProvider = ({ children }) => {
         <PlayerContext.Provider
             value={{
                 currentTrack,
-                liked,
-                disliked,
                 isPlaying,
                 volume,
                 isLoading,
@@ -67,6 +70,7 @@ export const PlayerProvider = ({ children }) => {
                 streamUrl,
                 handlePlayPause,
                 handleVolumeChange,
+                recentSongs
             }}
         >
             {children}

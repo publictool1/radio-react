@@ -1,0 +1,75 @@
+.radio-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: 50px auto;
+    padding: 50px;
+}
+
+.icon {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+    width: 30%;
+}
+
+.icon img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.icon img:hover {
+    transform: scale(1.1);
+}
+
+.text {
+    width: 70%;
+    padding: 0 20px;
+    color: #333;
+}
+
+.text h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #3F51B5;
+    text-align: center;
+}
+
+.text p {
+    font-size: 1.3rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .radio-info {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .icon {
+        width: 100%;
+        text-align: center;
+    }
+
+    .icon img {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+    }
+
+    .text {
+        width: 100%;
+        padding: 20px 0;
+        text-align: center;
+    }
+}

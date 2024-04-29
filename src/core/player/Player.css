@@ -19,13 +19,11 @@
   position: relative;
 }
 
-
 .track-info-p h2 {
   font-size: 3.5em;
   font-weight: 800;
   color: #fff;
   white-space: nowrap;
-  display: inline;
   cursor: default;
 }
 
@@ -70,7 +68,6 @@
   height: 23px;
 }
 
-/* Стили для индикатора наполнения */
 .volume-control input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
@@ -81,7 +78,6 @@
   background: linear-gradient(to right, white 0%, white var(--value, 100%), transparent var(--value, 50%), transparent 100%);
 }
 
-/* Стили для самого ползунка */
 .volume-control input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -93,7 +89,6 @@
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
 
-/* Стили для индикатора наполнения */
 .volume-control input[type="range"]::-webkit-slider-runnable-track {
   width: 100%;
   height: 5px;
@@ -101,7 +96,6 @@
   border-radius: 5px;
   background: linear-gradient(to right, white 0%, white calc(var(--value) * 1%), rgba(255, 255, 255, 0.7) calc(var(--value) * 1%), rgba(255, 255, 255, 0.7) 100%);
 }
-
 
 .loading-message {
   text-align: center;
@@ -147,16 +141,17 @@
 
 .marquee-container h2 {
   display: inline-block;
-  padding-left: 10%;
-  animation: marquee 8s linear infinite;
   margin: 0;
+}
+
+.marquee {
+  animation: marquee 8s linear infinite;
 }
 
 @keyframes marquee {
   0% {
     transform: translateX(0);
   }
-
   100% {
     transform: translateX(-100%);
   }
@@ -166,6 +161,10 @@
   .player-content {
     flex-direction: column;
     height: 100%;
+  }
+
+  .volume-control input[type="range"] {
+    display: none;
   }
 
   .left {
@@ -215,7 +214,7 @@
     width: 100%;
     flex-direction: column;
     align-items: normal;
-}
+  }
 
   .volume-control {
     margin: 25px 30px;
@@ -228,6 +227,10 @@
     height: 100%;
   }
 
+  .volume-control input[type="range"] {
+    display: none;
+  }
+
   .left {
     width: 100%;
     margin-left: 0;
@@ -275,18 +278,21 @@
     width: 100%;
     flex-direction: column;
     align-items: normal;
-}
+  }
 
   .volume-control {
     margin: 25px 30px;
   }
 }
 
-/* Для планшетов и устройств среднего размера */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
   .player-content {
     flex-direction: column;
     height: 100%;
+  }
+
+  .volume-control input[type="range"] {
+    display: none;
   }
 
   .left {
@@ -336,7 +342,7 @@
     width: 100%;
     flex-direction: column;
     align-items: normal;
-}
+  }
 
   .volume-control {
     margin: 25px 30px;
