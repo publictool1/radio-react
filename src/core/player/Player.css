@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  font-family: "RF Dewi Extended", sans-serif !important;
+  font-family: "RF Dewi Extended", sans-serif;
 }
 
 .player-container {
